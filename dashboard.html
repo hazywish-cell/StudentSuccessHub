@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en" class="bg-background">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Your Smart Study Planner dashboard." />
+    <title>Dashboard — Smart Study Planner</title>
+   <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  </head>
+  <script src="https://unpkg.com/lucide@latest"></script>
+<script>
+lucide.createIcons();
+</script>
+
+<script type="module" src="js/dashboard.js"></script>
+  <body>
+    <header class="navbar">
+      <div class="container">
+        <a href="index.html" class="brand">
+        </a>
+        <nav class="nav-actions">
+        </nav>
+      </div>
+    </header>
+
+    <main class="dashboard-layout">
+
+<!-- ================= SIDEBAR ================= -->
+  <!-- Sidebar -->
+<aside class="sidebar">
+
+    <div class="sidebar-top">
+
+        <div class="brand">
+            <div class="brand-icon">
+                <i class="fa-solid fa-graduation-cap"></i>
+            </div>
+
+            <span class="brand-text">
+                Success Hub
+            </span>
+        </div>
+
+        <nav class="sidebar-nav">
+
+            <a href="profile.html" class="nav-item">
+                <i class="fa-solid fa-user"></i>
+                <span>Profile</span>
+            </a>
+
+            <a href="index.html" class="nav-item">
+                <i class="fa-solid fa-house"></i>
+                <span>Home</span>
+            </a>
+
+            <a href="dashboard.html" class="nav-item active">
+                <i class="fa-solid fa-table-columns"></i>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="ai.html" class="nav-item">
+                <i class="fa-solid fa-robot"></i>
+                <span>AI Assistant</span>
+            </a>
+
+            <a href="report.html" class="nav-item">
+                <i class="fa-solid fa-chart-column"></i>
+                <span>Report Generator</span>
+            </a>
+
+            <a href="login.html" id="logout-btn" class="nav-item">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span>Logout</span>
+            </a>
+
+        </nav>
+
+    </div>
+
+    <div class="sidebar-footer">
+
+        <div class="user-profile">
+
+            <div class="avatar">
+                <img id="user-avatar"
+                     style="width:100%;height:100%;border-radius:50%;object-fit:cover;">
+            </div>
+
+            <div>
+                <div class="user-name" id="sidebar-user-name">
+                    Student
+                </div>
+
+                <div class="user-role">
+                    Student
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</aside>
+
+
+    <!-- Main Content -->
+    <section class="dashboard-content">
+      <div class="dash-header">
+        <div>
+          <h1 id="greeting">Your study dashboard</h1>
+          <p id="today-label"></p>
+        </div>
+      </div>
+
+      <div class="dash">
+        <!-- LEFT COLUMN -->
+        <div>
+          <!-- Add task -->
+          <section class="card">
+            <div class="card-head">
+              <h2 id="task-form-title">Add a study task</h2>
+              <button id="cancel-edit" class="btn btn-ghost btn-sm hidden">Cancel edit</button>
+            </div>
+            <form id="task-form" class="task-form">
+              <div class="field" style="margin: 0">
+                <label for="t-subject">Subject</label>
+                <input class="input" id="t-subject" placeholder="e.g. Mathematics" required />
+              </div>
+              <div class="field" style="margin: 0">
+                <label for="t-topic">Topic</label>
+                <input class="input" id="t-topic" placeholder="e.g. Integration" required />
+              </div>
+              <div class="field" style="margin: 0">
+                <label for="t-deadline">Deadline</label>
+                <input class="input" id="t-deadline" type="date" />
+              </div>
+              <div class="field" style="margin: 0">
+                <label for="t-priority">Priority</label>
+                <select class="select" id="t-priority">
+                  <option value="High">High</option>
+                  <option value="Medium" selected>Medium</option>
+                  <option value="Low">Low</option>
+                </select>
+              </div>
+              <div class="full">
+                <button type="submit" class="btn btn-primary btn-block" id="task-submit">
+                  Add task
+                </button>
+              </div>
+            </form>
+          </section>
+
+          <!-- Task list -->
+          <section class="card">
+            <div class="card-head">
+              <h2>Study tasks</h2>
+            </div>
+            <div class="task-list" id="task-list"></div>
+          </section>
+
+          <!-- Notes -->
+          <section class="card">
+            <div class="card-head">
+              <h2>Notes</h2>
+            </div>
+            <form id="note-form" class="task-form">
+              <div class="field full" style="margin: 0">
+                <label for="n-title">Title</label>
+                <input class="input" id="n-title" placeholder="Note title" required />
+              </div>
+              <div class="field full" style="margin: 0">
+                <label for="n-content">Content</label>
+                <textarea class="textarea" id="n-content" placeholder="Write your note..."></textarea>
+              </div>
+              <div class="full">
+                <button type="submit" class="btn btn-accent" id="note-submit">Save note</button>
+                <button type="button" class="btn btn-ghost hidden" id="note-cancel">Cancel</button>
+              </div>
+            </form>
+            <div class="notes-list" id="notes-list"></div>
+          </section>
+        </div>
+
+        <!-- RIGHT COLUMN -->
+        <div>
+          <!-- Progress -->
+          <section class="card">
+            <div class="card-head">
+              <h2>Progress</h2>
+            </div>
+            <div class="stat-grid">
+              <div class="stat"><div class="num" id="stat-total">0</div><div class="lbl">Total</div></div>
+              <div class="stat"><div class="num" id="stat-done">0</div><div class="lbl">Completed</div></div>
+              <div class="stat"><div class="num" id="stat-pending">0</div><div class="lbl">Pending</div></div>
+            </div>
+            <div class="progress-bar"><div class="progress-fill" id="progress-fill" style="width: 0%"></div></div>
+            <div style="font-size: 14px; color: var(--muted)">
+              <span id="progress-percent">0%</span> of all tasks completed
+            </div>
+            <div class="priority-rows" id="priority-rows" style="margin-top: 16px"></div>
+          </section>
+
+          <!-- Pomodoro -->
+          <section class="card">
+            <div class="card-head"><h2>Pomodoro timer</h2></div>
+            <div class="pomodoro">
+              <div class="pomo-modes">
+                <button class="pomo-mode active" data-minutes="25" data-mode="Focus">Focus 25</button>
+                <button class="pomo-mode" data-minutes="5" data-mode="Short break">Break 5</button>
+                <button class="pomo-mode" data-minutes="15" data-mode="Long break">Long 15</button>
+              </div>
+              <div class="pomo-time" id="pomo-time">25:00</div>
+              <div class="pomo-controls">
+                <button class="btn btn-primary" id="pomo-start">Start</button>
+                <button class="btn btn-ghost" id="pomo-reset">Reset</button>
+              </div>
+              <div class="pomo-count">Completed focus sessions today: <strong id="pomo-count">0</strong></div>
+            </div>
+          </section>
+
+          <!-- Daily schedule -->
+          <section class="card">
+            <div class="card-head"><h2>Today's study schedule</h2></div>
+            <div class="schedule-list" id="schedule-list"></div>
+          </section>
+        </div>
+      </div>
+      </section>
+
+</main>
+
+    <script type="module" src="js/dashboard.js"></script>
+  
+  </body>
+</html>

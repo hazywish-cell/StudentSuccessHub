@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Profile</title>
+<link rel="stylesheet" href="css/styles.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+
+
+<body>
+ <header class="navbar">
+      <div class="container">
+        <a href="index.html" class="brand">
+        </a>
+        <nav class="nav-actions">
+        </nav>
+      </div>
+    </header>
+
+
+<main class="dashboard-layout">
+<!-- ================= SIDEBAR ================= -->
+  <!-- Sidebar -->
+<!-- ================= SIDEBAR ================= -->
+  <!-- Sidebar -->
+<aside class="sidebar">
+
+    <div class="sidebar-top">
+
+        <div class="brand">
+            <div class="brand-icon">
+                <i class="fa-solid fa-graduation-cap"></i>
+            </div>
+
+            <span class="brand-text">
+                Success Hub
+            </span>
+        </div>
+
+        <nav class="sidebar-nav">
+
+            <a href="profile.html" class="nav-item active">
+                <i class="fa-solid fa-user"></i>
+                <span>Profile</span>
+            </a>
+
+            <a href="index.html" class="nav-item">
+                <i class="fa-solid fa-house"></i>
+                <span>Home</span>
+            </a>
+
+            <a href="dashboard.html" class="nav-item">
+                <i class="fa-solid fa-table-columns"></i>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="ai.html" class="nav-item">
+                <i class="fa-solid fa-robot"></i>
+                <span>AI Assistant</span>
+            </a>
+
+            <a href="report.html" class="nav-item">
+                <i class="fa-solid fa-chart-column"></i>
+                <span>Report Generator</span>
+            </a>
+
+            <a href="login.html" id="logout-btn" class="nav-item">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span>Logout</span>
+            </a>
+
+        </nav>
+
+    </div>
+
+    <div class="sidebar-footer">
+
+        <div class="user-profile">
+
+            <div class="avatar">
+                <img id="user-avatar"
+                     style="width:100%;height:100%;border-radius:50%;object-fit:cover;">
+            </div>
+
+            <div>
+                <div class="user-name" id="sidebar-user-name">
+                    Student
+                </div>
+
+                <div class="user-role">
+                    Student
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</aside>
+
+
+
+<!-- ================= MAIN CONTENT ================= -->
+<section class="dashboard-content">
+
+
+
+<div class="dash-header">
+
+
+<div>
+
+<h1>
+My Profile 👤
+</h1>
+
+
+<p>
+Manage your account and academic information
+</p>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="profile-page">
+
+
+
+
+
+<!-- LEFT PROFILE CARD -->
+
+
+<div class="profile-card profile-left">
+
+
+
+<div class="avatar-large">
+
+<i class="fa-solid fa-user"></i>
+
+</div>
+
+
+
+<button 
+id="change-photo"
+class="btn btn-primary btn-sm">
+
+<i class="fa-solid fa-camera"></i>
+Change Photo
+
+</button>
+<input 
+type="file"
+id="photo-input"
+accept="image/*"
+hidden>
+
+
+
+
+<h2 id="display-name">
+
+Student
+
+</h2>
+
+
+
+<p>
+Student Account
+</p>
+
+
+
+
+<div class="profile-status">
+
+Active Student
+
+</div>
+
+
+
+
+
+<div class="profile-mini">
+
+
+
+<div>
+
+<i class="fa-solid fa-calendar"></i>
+
+<span>
+Joined
+</span>
+
+<strong>
+2026
+</strong>
+
+
+</div>
+
+
+
+
+
+<div>
+
+<i class="fa-solid fa-book"></i>
+
+<span>
+Course
+</span>
+
+<strong id="display-course">
+Course
+</strong>
+
+
+</div>
+
+
+
+
+
+<div>
+
+<i class="fa-solid fa-star"></i>
+
+<span>
+Level
+</span>
+
+
+<strong id="display-level">
+University
+</strong>
+
+
+</div>
+
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<!-- RIGHT CARD -->
+
+
+<div class="profile-card">
+
+
+
+<h2>
+Personal Information
+</h2>
+
+
+
+
+<div class="profile-grid">
+
+
+
+<div class="profile-field">
+
+<label>
+Full Name
+</label>
+
+
+<input 
+id="profile-name"
+class="input">
+
+</div>
+
+
+
+
+
+<div class="profile-field">
+
+
+<label>
+Email Address
+</label>
+
+
+<input 
+id="profile-email"
+class="input">
+
+
+</div>
+
+
+
+
+
+
+<div class="profile-field">
+
+
+<label>
+Academic Level
+</label>
+
+
+<select id="academic-level" class="select">
+
+
+<option>
+High School
+</option>
+
+
+<option selected>
+University
+</option>
+
+
+<option>
+Professional
+</option>
+
+
+</select>
+
+
+</div>
+
+
+
+
+
+
+<div class="profile-field">
+
+
+<label>
+Institution
+</label>
+
+
+<input 
+id="institution"
+class="input">
+
+
+</div>
+
+
+
+
+
+
+
+<div class="profile-field">
+
+
+<label>
+Major / Department
+</label>
+
+
+<input 
+id="major"
+class="input">
+
+
+</div>
+
+
+
+
+
+
+
+
+<div class="profile-field">
+
+
+<label>
+Semester
+</label>
+
+
+<select id="semester" class="select">
+
+
+<option>
+Semester 1
+</option>
+
+
+<option>
+Semester 2
+</option>
+
+
+<option>
+Semester 3
+</option>
+
+
+<option>
+Semester 4
+</option>
+
+
+<option selected>
+Semester 5
+</option>
+
+
+</select>
+
+
+</div>
+
+
+
+
+</div>
+
+
+<h2 class="profile-title">
+Account Security 🔒
+</h2>
+
+
+<div class="profile-grid">
+
+
+<div class="profile-field">
+
+<label>
+Current Password
+</label>
+
+<input
+id="current-password"
+type="password"
+class="input"
+placeholder="Current password">
+
+</div>
+
+
+
+
+<div class="profile-field">
+
+<label>
+New Password
+</label>
+
+
+<input
+id="new-password"
+type="password"
+class="input"
+placeholder="New password">
+
+
+</div>
+
+
+</div>
+
+
+<button
+id="change-password"
+class="btn btn-primary">
+
+Change Password
+
+</button>
+
+
+<h2 class="profile-title">
+
+Study Preferences 📚
+
+</h2>
+
+
+
+
+
+<div class="preference-box">
+
+
+
+<div>
+
+
+<i class="fa-solid fa-bullseye"></i>
+
+
+<div>
+
+
+<strong>
+Learning Goal
+</strong>
+
+
+<p>
+Improve programming, AI and data science skills
+</p>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+<div class="profile-actions">
+
+
+<button 
+id="save-profile"
+class="btn btn-primary">
+
+Save Changes
+
+</button>
+
+
+
+<button 
+class="btn btn-ghost">
+
+Cancel
+
+</button>
+
+
+
+</div>
+
+
+
+
+
+</div>
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+</section>
+
+
+
+
+</main>
+
+
+
+<script>
+
+const photo =
+localStorage.getItem("profilePhoto");
+
+
+const avatar =
+document.getElementById("sidebar-avatar");
+
+
+const user =
+JSON.parse(localStorage.getItem("ssp_user"));
+
+
+
+if(user){
+
+    document.querySelector(".user-name").textContent =
+    user.name || "Student";
+
+}
+
+
+
+if(photo && avatar){
+
+    avatar.src = photo;
+
+}
+
+</script>
+<script type="module" src="./js/profile.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,1319 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+
+<title>Report Generator | Student Success Hub</title>
+
+
+<link rel="stylesheet"
+href="css/styles.css">
+<link rel="stylesheet" href="css/report.css">
+
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+
+<script src="https://unpkg.com/lucide@latest"></script>
+
+
+</head>
+
+
+<body>
+ <header class="navbar">
+      <div class="container">
+        <a href="index.html" class="brand">
+        </a>
+        <nav class="nav-actions">
+        </nav>
+      </div>
+    </header>
+
+
+<div class="dashboard-layout">
+
+
+
+<!-- ================= SIDEBAR ================= -->
+<!-- ================= SIDEBAR ================= -->
+  <!-- Sidebar -->
+<aside class="sidebar">
+
+    <div class="sidebar-top">
+
+        <div class="brand">
+            <div class="brand-icon">
+                <i class="fa-solid fa-graduation-cap"></i>
+            </div>
+
+            <span class="brand-text">
+                Success Hub
+            </span>
+        </div>
+
+        <nav class="sidebar-nav">
+
+            <a href="profile.html" class="nav-item">
+                <i class="fa-solid fa-user"></i>
+                <span>Profile</span>
+            </a>
+
+            <a href="index.html" class="nav-item">
+                <i class="fa-solid fa-house"></i>
+                <span>Home</span>
+            </a>
+
+            <a href="dashboard.html" class="nav-item">
+                <i class="fa-solid fa-table-columns"></i>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="ai.html" class="nav-item">
+                <i class="fa-solid fa-robot"></i>
+                <span>AI Assistant</span>
+            </a>
+
+            <a href="report.html" class="nav-item active">
+                <i class="fa-solid fa-chart-column"></i>
+                <span>Report Generator</span>
+            </a>
+
+            <a href="login.html" id="logout-btn" class="nav-item">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span>Logout</span>
+            </a>
+
+        </nav>
+
+    </div>
+
+    <div class="sidebar-footer">
+
+        <div class="user-profile">
+
+            <div class="avatar">
+                <img id="user-avatar"
+                     style="width:100%;height:100%;border-radius:50%;object-fit:cover;">
+            </div>
+
+            <div>
+                <div class="user-name" id="sidebar-user-name">
+                    Student
+                </div>
+
+                <div class="user-role">
+                    Student
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</aside>
+
+
+<!-- ================= MAIN ================= -->
+
+
+<main class="dashboard-content">
+
+
+
+<header class="app-header">
+
+
+
+<div>
+
+
+<h1>
+
+Report Generator
+
+</h1>
+
+
+<p class="subtitle">
+
+Generate and download your academic performance reports.
+
+</p>
+
+
+
+</div>
+
+
+
+
+
+<div class="date-badge">
+
+
+<i data-lucide="calendar"></i>
+
+
+<span id="current-date-badge">
+
+July 2026
+
+</span>
+
+
+</div>
+
+
+
+</header>
+
+
+
+
+
+
+<!-- FILTER CARD -->
+
+
+<section class="card filter-card">
+
+
+
+<div class="card-header">
+
+
+<div class="card-title-container">
+
+
+<i data-lucide="filter"></i>
+
+
+<div>
+
+
+<h2>
+
+Report Filters
+
+</h2>
+
+
+<p class="card-subtitle">
+
+Select parameters to customize your performance report.
+
+</p>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+<form 
+id="filter-form"
+class="filter-form">
+
+
+
+<div class="form-grid">
+
+
+
+
+
+<div class="form-group">
+
+
+<label>
+
+Student Name
+
+</label>
+
+
+<div class="input-wrapper">
+
+
+<i data-lucide="user"></i>
+
+
+<input
+id="student-name"
+readonly
+>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="form-group">
+
+
+<label>
+
+Report Type
+
+</label>
+
+
+<div class="input-wrapper">
+
+
+<i data-lucide="file-text"></i>
+
+
+<select id="report-type">
+
+
+<option value="complete">
+
+Complete Report
+
+</option>
+
+
+<option value="progress">
+
+Study Progress Report
+
+</option>
+
+
+
+<option value="task">
+
+Task Report
+
+</option>
+
+
+
+<option value="notes">
+
+Notes Report
+
+</option>
+
+
+</select>
+
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+<div class="form-group">
+
+
+<label>
+
+From Date
+
+</label>
+
+
+<div class="input-wrapper">
+
+
+<i data-lucide="calendar-days"></i>
+
+
+<input
+type="date"
+id="from-date"
+>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+<div class="form-group">
+
+
+<label>
+
+To Date
+
+</label>
+
+
+<div class="input-wrapper">
+
+
+<i data-lucide="calendar-days"></i>
+
+
+<input
+type="date"
+id="to-date"
+>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+</div>
+
+
+
+
+
+
+<div class="form-actions">
+
+
+<button
+type="submit"
+class="btn btn-primary"
+id="btn-generate-top">
+
+
+<i data-lucide="play"></i>
+
+
+Generate Report
+
+
+</button>
+
+
+
+
+
+<button
+type="button"
+class="btn btn-secondary"
+id="btn-clear-top">
+
+
+<i data-lucide="refresh-cw"></i>
+
+
+Clear Filters
+
+
+</button>
+
+
+
+
+</div>
+
+
+
+</form>
+
+
+
+</section> 
+<!-- ================= TOAST ================= -->
+
+<div id="toast-container"></div>
+
+
+
+
+
+<!-- ================= METRICS ================= -->
+
+
+<section class="metrics-grid">
+
+
+
+<div class="metric-card">
+
+
+<div class="metric-icon blue-bg">
+
+<i data-lucide="list-todo"></i>
+
+</div>
+
+
+<div class="metric-details">
+
+<span class="metric-label">
+
+Total Tasks
+
+</span>
+
+
+<span 
+class="metric-value"
+id="card-total-tasks">
+
+0
+
+</span>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+<div class="metric-card">
+
+
+<div class="metric-icon green-bg">
+
+<i data-lucide="circle-check"></i>
+
+</div>
+
+
+<div class="metric-details">
+
+
+<span class="metric-label">
+
+Completed Tasks
+
+</span>
+
+
+<span
+class="metric-value"
+id="card-completed-tasks">
+
+0
+
+</span>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="metric-card">
+
+
+<div class="metric-icon orange-bg">
+
+
+<i data-lucide="clock"></i>
+
+
+</div>
+
+
+
+<div class="metric-details">
+
+
+<span class="metric-label">
+
+Pending Tasks
+
+</span>
+
+
+
+<span
+class="metric-value"
+id="card-pending-tasks">
+
+0
+
+</span>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+<div class="metric-card">
+
+
+<div class="metric-icon purple-bg">
+
+
+<i data-lucide="trending-up"></i>
+
+
+</div>
+
+
+
+
+<div class="metric-details">
+
+
+<span class="metric-label">
+
+Study Progress
+
+</span>
+
+
+
+<span
+class="metric-value"
+id="card-study-progress">
+
+0%
+
+</span>
+
+
+</div>
+
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- ================= REPORT PREVIEW ================= -->
+
+
+
+<section 
+class="card preview-card">
+
+
+
+
+
+<div class="card-header preview-header-accent">
+
+
+
+<div class="preview-brand-heading">
+
+
+
+<div class="logo-circle">
+
+
+<i data-lucide="graduation-cap"></i>
+
+
+</div>
+
+
+
+
+<div>
+
+
+<h2>
+
+Academic Performance Report
+
+</h2>
+
+
+
+<p>
+
+Student Success Hub Academic Analytics
+
+</p>
+
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+<div 
+class="report-status-badge"
+id="preview-status-badge">
+
+
+Draft
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+<!-- PRINT AREA -->
+
+
+
+<div 
+class="preview-body"
+id="printable-area">
+
+
+
+
+
+
+<div class="print-header">
+
+
+<h1>
+
+Student Success Hub - Performance Report
+
+</h1>
+
+
+
+<p>
+
+
+Generated on :
+
+<span id="prev-generated-date">
+
+-
+
+</span>
+
+
+</p>
+
+
+
+<hr class="divider">
+
+
+</div>
+
+
+
+
+
+
+
+
+<!-- STUDENT DETAILS -->
+
+
+
+<div class="preview-meta-grid">
+
+
+
+
+
+<div class="meta-item">
+
+
+<span class="meta-label">
+
+Student Name
+
+</span>
+
+
+
+<span 
+class="meta-value"
+id="prev-student-name">
+
+
+-
+
+</span>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+<div class="meta-item">
+
+
+<span class="meta-label">
+
+Report Type
+
+</span>
+
+
+
+<span
+class="meta-value"
+id="prev-report-type">
+
+
+COMPLETE
+
+
+</span>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<div class="meta-item">
+
+
+<span class="meta-label">
+
+Generated Date
+
+</span>
+
+
+
+<span
+class="meta-value"
+id="prev-generated-date">
+
+
+-
+
+</span>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+<div class="meta-item">
+
+
+<span class="meta-label">
+
+Date Range
+
+</span>
+
+
+
+<span
+class="meta-value"
+id="prev-date-range">
+
+
+All Time
+
+
+</span>
+
+
+
+</div>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+<hr class="divider">
+
+
+
+
+
+
+
+<h3 class="section-heading">
+
+
+<i data-lucide="bar-chart-3"></i>
+
+
+Performance Metrics
+
+
+</h3>
+
+
+
+
+
+
+<div class="preview-stats-grid">
+
+
+
+<div class="stat-row">
+
+<span class="stat-name">
+
+<i data-lucide="list"></i>
+
+Total Tasks Logged
+
+</span>
+
+
+<span 
+class="stat-val"
+id="prev-total-tasks">
+
+0
+
+</span>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="stat-row">
+
+
+<span class="stat-name">
+
+
+<i data-lucide="check-circle"></i>
+
+
+Completed Tasks
+
+
+</span>
+
+
+
+<span
+class="stat-val"
+id="prev-completed-tasks">
+
+0
+
+</span>
+
+
+
+</div>
+
+
+
+
+
+
+
+<div class="stat-row">
+
+
+<span class="stat-name">
+
+
+<i data-lucide="clock"></i>
+
+
+Pending Tasks
+
+
+</span>
+
+
+
+<span
+class="stat-val"
+id="prev-pending-tasks">
+
+0
+
+
+</span>
+
+
+
+</div>
+
+
+
+
+
+
+
+<div class="stat-row">
+
+
+<span class="stat-name">
+
+
+<i data-lucide="notebook"></i>
+
+
+Study Notes Created
+
+
+</span>
+
+
+
+<span
+class="stat-val"
+id="prev-notes-created">
+
+0
+
+
+</span>
+
+
+</div>
+
+
+
+
+
+</div>
+<!-- ================= PROGRESS ================= -->
+
+
+<div class="preview-progress-section">
+
+
+<div class="progress-info">
+
+
+<span>
+
+Overall Study Completion Rate
+
+</span>
+
+
+<span id="prev-progress-pct">
+
+0%
+
+</span>
+
+
+</div>
+
+
+
+
+<div class="custom-progress-bar">
+
+
+<div
+
+class="progress-bar-fill"
+
+id="prev-progress-fill"
+
+style="width:0%">
+
+
+</div>
+
+
+</div>
+
+
+
+</div>
+
+
+<!-- ================= SIGNATURE ================= -->
+
+
+
+<div class="print-signatures">
+
+
+
+
+
+<div class="signature-line">
+
+
+<div class="line"></div>
+
+
+<p class="signature-title">
+
+Student Signature
+
+</p>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="signature-line">
+
+
+<div class="line"></div>
+
+
+<p class="signature-title">
+
+Advisor Verification
+
+</p>
+
+
+</div>
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<!-- ================= BUTTONS ================= -->
+
+
+
+<div class="card-footer report-actions">
+
+
+
+
+
+<button
+
+class="btn btn-primary"
+
+id="btn-generate-bottom">
+
+
+<i data-lucide="play"></i>
+
+
+Generate Report
+
+
+</button>
+
+
+
+
+
+
+<button
+
+class="btn btn-download"
+
+id="btn-download-pdf">
+
+
+
+<i data-lucide="download"></i>
+
+
+Download PDF
+
+
+
+</button>
+
+
+
+
+
+
+<button
+
+class="btn btn-print"
+
+id="btn-print">
+
+
+
+<i data-lucide="printer"></i>
+
+
+Print Report
+
+
+
+</button>
+
+
+
+
+
+
+
+<button
+
+class="btn btn-clear"
+
+id="btn-clear-bottom">
+
+
+
+<i data-lucide="trash-2"></i>
+
+
+Clear Report
+
+
+
+</button>
+
+
+
+
+
+
+</div>
+
+
+
+
+
+</section>
+
+
+
+
+
+</main>
+
+<!-- Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<!-- jsPDF -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<!-- html2canvas -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+<!-- Report JavaScript -->
+<script type="module" src="js/report.js"></script>
+
+<script>
+    lucide.createIcons();
+</script>
+
+
+</body>
+
+</html>

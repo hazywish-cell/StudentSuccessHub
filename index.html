@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Smart Study Planner helps students and professionals organize study tasks, track progress, focus with a Pomodoro timer, and keep notes in one place.">
+    <title>Smart Study Planner — Plan, Focus, Achieve</title>
+    <!-- Google Fonts: Outfit & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Premium Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <!-- Interactive Background Effects -->
+    <div class="bg-decorations">
+        <div class="glow-orb orb-1"></div>
+        <div class="glow-orb orb-2"></div>
+        <div class="glow-orb orb-3"></div>
+        <div class="grid-overlay"></div>
+    </div>
+<!-- Navigation Header -->
+<header class="navbar">
+    <div class="container">
+
+        <a href="index.html" class="brand">
+        <span class="brand-mark">
+        <i class="fa-solid fa-graduation-cap"></i>
+        </span>
+            <span class="brand-text">
+             Success Hub
+            </span>
+        </a>
+
+        <nav class="nav-actions">
+            <a href="login.html" class="btn btn-ghost btn-sm">Log in</a>
+            <a href="login.html#register" class="btn btn-primary btn-sm">Get Started</a>
+        </nav>
+
+    </div>
+</header>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-grid">
+                <div class="hero-content">
+                    <span class="eyebrow">
+                        <i class="fa-solid fa-sparkles"></i> Study Smarter, Not Harder
+                    </span>
+                    <h1 class="text-balance">
+                        Plan your studies, <span class="gradient-text">stay focused</span>, and track every win.
+                    </h1>
+                    <p class="lead text-pretty">
+                        An all-in-one planner for students and professionals. Organize tasks by subject and priority, follow personalized schedules, use the Pomodoro timer, and keep notes in one workspace.
+                    </p>
+                    <div class="hero-cta">
+                        <a href="login.html#register" class="btn btn-primary btn-lg">
+                            Create free account <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                        <a href="login.html" class="btn btn-ghost btn-lg">
+                            I already have an account
+                        </a>
+                    </div>
+                </div>
+                <!-- Replace PNG with interactive glassmorphic CSS study mockup -->
+                <div class="hero-art">
+                    <div class="hero-mockup-wrapper">
+                        <!-- Dashboard Container Mockup -->
+                        <div class="mockup-dashboard">
+                            <div class="mockup-header">
+                                <div class="mockup-dots">
+                                    <span class="dot-red"></span>
+                                    <span class="dot-yellow"></span>
+                                    <span class="dot-green"></span>
+                                </div>
+                                <div class="mockup-title"><i class="fa-solid fa-lock"></i> app.smartstudy.com</div>
+                            </div>
+                            
+                            <div class="mockup-body">
+                                <!-- Floating element 1: Active Pomodoro -->
+                                <div class="floating-widget card-pomodoro">
+                                    <div class="widget-header">
+                                        <span><i class="fa-solid fa-clock"></i> Focus Block</span>
+                                        <span class="badge badge-active">Active</span>
+                                    </div>
+                                    <div class="timer-circle-mock">
+                                        <div class="timer-text-mock">18:42</div>
+                                    </div>
+                                    <div class="timer-subject">Computer Architecture</div>
+                                </div>
+                                <!-- Floating element 2: Spaced Repetition Roadmap -->
+                                <div class="floating-widget card-roadmap">
+                                    <div class="widget-header">
+                                        <span><i class="fa-solid fa-calendar-days"></i> Upcoming Reviews</span>
+                                    </div>
+                                    <ul class="roadmap-list-mock">
+                                        <li>
+                                            <span class="bullet bullet-purple"></span>
+                                            <div class="roadmap-info">
+                                                <strong>Database Systems</strong>
+                                                <span class="time-stamp">Day 3 spaced review</span>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <span class="bullet bullet-cyan"></span>
+                                            <div class="roadmap-info">
+                                                <strong>Linear Algebra</strong>
+                                                <span class="time-stamp">Day 7 spaced review</span>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!-- Floating element 3: XP Progression Widget -->
+                                <div class="floating-widget card-progress">
+                                    <div class="progress-details">
+                                        <span class="xp-level">Level 5 Scholar</span>
+                                        <span class="xp-count">1,450 XP</span>
+                                    </div>
+                                    <div class="progress-bar-container">
+                                        <div class="progress-bar-fill"></div>
+                                    </div>
+                                    <div class="streak-details">
+                                        <i class="fa-solid fa-fire text-orange"></i> <strong>3 Day Streak</strong>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Features Section -->
+        <section class="section" id="features-section">
+            <div class="container">
+                <div class="section-head">
+                    <span class="eyebrow"><i class="fa-solid fa-layer-group"></i> Features</span>
+                    <h2>Everything you need to stay on track</h2>
+                    <p>A focused cognitive science toolkit that turns study goals into structured, achievable daily roadmaps.</p>
+                </div>
+                
+                <!-- Features Grid, to be populated dynamically by JS, with HTML fallback -->
+                <div class="feature-grid" id="features">
+                    <!-- Javascript will load this dynamically with beautiful templates -->
+                    <noscript>
+                        <div class="feature-card">
+                            <i class="fa-solid fa-wand-magic-sparkles"></i>
+                            <h3>Smart Scheduler</h3>
+                            <p>Automatically organizes spaced repetition review cycles based on your exam date and difficulty.</p>
+                        </div>
+                    </noscript>
+                </div>
+            </div>
+        </section>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-layout">
+                <div class="footer-brand">
+                      <a href="index.html" class="brand">
+            <span class="brand-mark">
+        <i class="fa-solid fa-graduation-cap"></i>
+        </span>
+            <span class="brand-text">
+             Success Hub
+            </span>
+        </a>
+
+                    <p>Empowering students with structured cognitive-science backed learning techniques.</p>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2026 Smart Study Planner · Built with HTML, CSS, JavaScript & Python</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Scripts -->
+    <script type="module" src="js/home.js"></script>
+<script>
+    lucide.createIcons();
+</script>
+</body>
+</html>

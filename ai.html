@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Student AI Assistant | Student Success Hub</title>
+
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/ai.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+
+<body>
+ <header class="navbar">
+      <div class="container">
+        <a href="index.html" class="brand">
+        </a>
+        <nav class="nav-actions">
+        </nav>
+      </div>
+    </header>
+
+<div class="dashboard-layout">
+<!-- =========================
+        SIDEBAR
+========================= -->
+<!-- ================= SIDEBAR ================= -->
+  <!-- Sidebar -->
+<aside class="sidebar">
+
+    <div class="sidebar-top">
+
+        <div class="brand">
+            <div class="brand-icon">
+                <i class="fa-solid fa-graduation-cap"></i>
+            </div>
+
+            <span class="brand-text">
+                Success Hub
+            </span>
+        </div>
+
+        <nav class="sidebar-nav">
+
+            <a href="profile.html" class="nav-item">
+                <i class="fa-solid fa-user"></i>
+                <span>Profile</span>
+            </a>
+
+            <a href="index.html" class="nav-item">
+                <i class="fa-solid fa-house"></i>
+                <span>Home</span>
+            </a>
+
+            <a href="dashboard.html" class="nav-item">
+                <i class="fa-solid fa-table-columns"></i>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="ai.html" class="nav-item active">
+                <i class="fa-solid fa-robot"></i>
+                <span>AI Assistant</span>
+            </a>
+
+            <a href="report.html" class="nav-item">
+                <i class="fa-solid fa-chart-column"></i>
+                <span>Report Generator</span>
+            </a>
+
+            <a href="login.html" id="logout-btn" class="nav-item">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span>Logout</span>
+            </a>
+
+        </nav>
+
+    </div>
+
+    <div class="sidebar-footer">
+
+        <div class="user-profile">
+
+            <div class="avatar">
+                <img id="user-avatar"
+                     style="width:100%;height:100%;border-radius:50%;object-fit:cover;">
+            </div>
+
+            <div>
+                <div class="user-name" id="sidebar-user-name">
+                    Student
+                </div>
+
+                <div class="user-role">
+                    Student
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</aside>
+
+
+<!-- =========================
+        MAIN
+========================= -->
+
+<main class="ai-main">
+
+<!-- Header -->
+<header class="ai-header">
+
+    <h2>AI Assistant</h2>
+
+    <div class="header-actions">
+
+        <div class="online-status">
+            <span class="status-dot"></span>
+            Online
+        </div>
+
+        <button id="new-chat-btn" class="new-chat-btn">
+            <i class="fa-solid fa-plus"></i>
+            New Chat
+        </button>
+
+    </div>
+
+</header>
+<!-- =========================
+      CHAT WRAPPER
+========================= -->
+
+<div class="chat-wrapper">
+
+<!-- Chat History -->
+
+<div
+id="chatBox"
+class="chat-history">
+
+<!-- Welcome Screen -->
+
+<div class="chat-welcome">
+
+<div class="welcome-icon">
+
+<i class="fa-solid fa-graduation-cap"></i>
+
+</div>
+
+<h1>
+
+Welcome to Student Success Hub
+
+</h1>
+
+<p>
+
+Your personal learning assistant for
+Python, SQL, Data Science,
+Machine Learning and academic projects.
+
+Ask me anything!
+
+</p>
+
+<div class="suggestions">
+
+<div
+class="suggestion"
+onclick="quickMessage('Explain Python Loops')">
+
+🐍 Python
+
+</div>
+
+<div
+class="suggestion"
+onclick="quickMessage('Explain SQL JOIN')">
+
+🗄 SQL
+
+</div>
+
+<div
+class="suggestion"
+onclick="quickMessage('Machine Learning Roadmap')">
+
+🤖 Machine Learning
+
+</div>
+
+<div
+class="suggestion"
+onclick="quickMessage('Data Science Project Ideas')">
+
+📊 Data Science
+
+</div>
+
+</div>
+
+</div>
+
+<!-- Messages will be added here by ai.js -->
+ <!-- =========================
+        INPUT AREA
+========================= -->
+
+</div>
+<!-- End chat-history -->
+
+<div class="chat-input-container">
+
+    <div class="chat-input-area">
+
+
+        </button>
+
+        <textarea
+
+            id="userInput"
+
+            class="ai-input"
+
+            rows="1"
+
+            placeholder="Ask Student AI anything..."
+
+            autocomplete="off"
+
+        ></textarea>
+
+        <button
+
+            id="sendBtn"
+
+            class="ai-send"
+
+            title="Send">
+
+            <i class="fa-solid fa-paper-plane"></i>
+
+        </button>
+
+    </div>
+
+    <div class="chat-footer">
+
+        Student AI may make mistakes.
+        Verify important information before using it.
+
+    </div>
+
+</div>
+
+</div>
+<!-- End chat-wrapper -->
+
+</main>
+
+</div>
+<!-- End dashboard-layout -->
+
+<script type="module" src="js/ai.js"></script>
+
+</body>
+</html>
