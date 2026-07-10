@@ -16,7 +16,6 @@ const BASE_URL =
 // service its own URL — if/when you deploy server/ to Render, put that
 // service's URL here.
 const PROD_CHAT_URL = "https://studentsuccesshub-5.onrender.com";
-if the chat server gets its own Render service
 
 export const CHAT_BASE_URL =
     (location.hostname === "localhost" || location.hostname === "127.0.0.1")
